@@ -1,0 +1,27 @@
+
+    [
+    {
+      "title": "Infinite Loop Detected",
+      "description": "The system enters an infinite loop when processing certain form inputs",
+      "severity": 4,
+      "_id": "1NF1N1T3"
+    },
+    {
+      "title": "Keyboard Not Found",
+      "description": "Virtual keyboard doesn't appear on mobile devices when expected",
+      "severity": 3,
+      "_id": "K3YB0RD"
+    },
+    {
+      "title": "404 Coffee Not Found",
+      "description": "Coffee machine API returns 404 errors during peak morning hours",
+      "severity": 2,
+      "_id": "C0FF33"
+    },
+    {
+      "title": "Unexpected Response",
+      "description": "Server returns unexpected error messages when processing large datasets",
+      "severity": 1,
+      "_id": "G0053"
+    }
+  ]
