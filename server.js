@@ -7,7 +7,7 @@ const app = express()
  
 //* Express Config:
 app.use(express.static('public'))
-// app.use(cookieParser()
+app.use(cookieParser())
 
 
 //* Express Routing:
@@ -42,6 +42,13 @@ app.get('/api/bug/save', (req, res) => {
 //* Get/Read by id
 app.get('/api/bug/:bugId', (req, res) => {
     const { bugId } = req.params
+    const { visitedBugs = [] } = req.cookies
+
+    if(visitedBugs.length >= 3) return res.status(401).send('Wait for a bit')
+    if(!visitedBugs.includes(bugId)) visitedBugs.push(bugId)
+
+    res.cookie('visitedBugs', visitedBugs, { maxAge: 1000 * 70 })
+
     bugService.getById(bugId)
         .then(bug => res.send(bug))
         .catch(err => {
@@ -63,6 +70,14 @@ app.get('/api/bug/:bugId/remove', (req, res) => {
         })
 })
 
+// app.get('/cookies', (req, res) => {
+//     let visitedCount = req.cookies.visitedCount || 0
+//     visitedCount++
+//     console.log('visitedCount:', visitedCount)
+//     res.cookie('visitedCount', visitedCount, { maxAge: 5 * 1000 })
+//     // console.log('visitedCount:', visitedCount)
+//     res.send('Hello Puki')
+// })
 
  app.get('/', (req, res) => res.send('Hello there')) 
  
