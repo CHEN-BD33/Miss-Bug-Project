@@ -3,7 +3,7 @@ import { storageService } from './async-storage.service.js'
 
 const STORAGE_KEY = 'bugs'
 const BASE_URL = '/api/bug/'
-_createBugs()
+// _createBugs()
 
 export const bugService = {
     query,
@@ -13,7 +13,7 @@ export const bugService = {
     getDefaultFilter
 }
 
-function query(filterBy) {
+function query(filterBy = {}) {
     // return storageService.query(STORAGE_KEY)
     return axios.get(BASE_URL)
         .then(res => res.data)
@@ -34,13 +34,8 @@ function query(filterBy) {
 
 function getById(bugId) {
     // return storageService.get(STORAGE_KEY, bugId)
-    return axios.get(`/api/bug/${bugId}`).catch(err => {
-        if (err.response && err.resoponse.status === 401) {
-            console.log('Bug view limit exceeded. Please wait.')
-            return Promise.reject(new Error('Bug view limit exceeded'))
-        }
-        return Promise.reject(err)
-    })
+    return axios.get(BASE_URL + bugId)
+    .then(res => res.data)
 }
 
 function remove(bugId) {
