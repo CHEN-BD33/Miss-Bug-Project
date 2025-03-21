@@ -1,27 +1,86 @@
-
-    [
+[
     {
       "title": "Infinite Loop Detected",
       "description": "The system enters an infinite loop when processing certain form inputs",
       "severity": 4,
-      "_id": "1NF1N1T3"
+      "_id": "1NF1N1T3",
+      "createdAt": "2025-01-15T09:23:48Z"
     },
     {
       "title": "Keyboard Not Found",
       "description": "Virtual keyboard doesn't appear on mobile devices when expected",
       "severity": 3,
-      "_id": "K3YB0RD"
+      "_id": "K3YB0RD",
+      "createdAt": "2025-02-03T14:17:22Z"
     },
     {
       "title": "404 Coffee Not Found",
       "description": "Coffee machine API returns 404 errors during peak morning hours",
       "severity": 2,
-      "_id": "C0FF33"
+      "_id": "C0FF33",
+      "createdAt": "2025-02-18T08:05:31Z"
     },
     {
       "title": "Unexpected Response",
       "description": "Server returns unexpected error messages when processing large datasets",
       "severity": 1,
-      "_id": "G0053"
+      "_id": "G0053",
+      "createdAt": "2025-03-10T16:42:19Z"
+    },
+    {
+      "title": "Memory Leak in Dashboard",
+      "description": "Dashboard performance degrades over time due to memory not being properly released",
+      "severity": 5,
+      "_id": "M3ML34K",
+      "createdAt": "2025-01-22T11:38:05Z"
+    },
+    {
+      "title": "CSS Overflow Issues",
+      "description": "Content overflows container on smaller screens causing horizontal scrolling",
+      "severity": 2,
+      "_id": "0V3RFL0",
+      "createdAt": "2025-02-27T13:14:52Z"
+    },
+    {
+      "title": "Authentication Timeout",
+      "description": "Users are logged out too quickly even when actively using the application",
+      "severity": 3,
+      "_id": "T1M30UT",
+      "createdAt": "2025-03-05T10:51:33Z"
+    },
+    {
+      "title": "Image Upload Failure",
+      "description": "Image uploads fail silently when file size exceeds 2MB",
+      "severity": 4,
+      "_id": "UPL0AD5",
+      "createdAt": "2025-03-12T15:29:47Z"
+    },
+    {
+      "title": "Notification Spam",
+      "description": "System sends duplicate notifications when multiple users perform actions simultaneously",
+      "severity": 2,
+      "_id": "N0T1FY2",
+      "createdAt": "2025-02-08T09:44:16Z"
+    },
+    {
+      "title": "Search Indexing Error",
+      "description": "Recent items not appearing in search results until application restart",
+      "severity": 3,
+      "_id": "S3ARCH1",
+      "createdAt": "2025-03-17T14:01:38Z"
+    },
+    {
+      "title": "Date Formatting Issue",
+      "description": "Dates display incorrectly for users in certain timezones",
+      "severity": 2,
+      "_id": "D4T3BUG",
+      "createdAt": "2025-01-30T16:22:09Z"
+    },
+    {
+      "title": "Print Layout Broken",
+      "description": "Reports print with overlapping text and missing elements",
+      "severity": 3,
+      "_id": "PR1NT3R",
+      "createdAt": "2025-02-14T11:33:27Z"
     }
   ]
