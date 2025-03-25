@@ -3,7 +3,6 @@ import { storageService } from './async-storage.service.js'
 
 const STORAGE_KEY = 'bugs'
 const BASE_URL = '/api/bug/'
-// _createBugs()
 
 export const bugService = {
     query,
@@ -14,7 +13,6 @@ export const bugService = {
 }
 
 function query(filterBy = {}) {
-    // return storageService.query(STORAGE_KEY)
     return axios.get(BASE_URL)
         .then(res => res.data)
         .then(bugs => {
@@ -33,31 +31,32 @@ function query(filterBy = {}) {
 }
 
 function getById(bugId) {
-    // return storageService.get(STORAGE_KEY, bugId)
     return axios.get(BASE_URL + bugId)
-    .then(res => res.data)
+        .then(res => res.data)
 }
 
 function remove(bugId) {
-    // return storageService.remove(STORAGE_KEY, bugId)
-    return axios.get(BASE_URL + bugId + '/remove')
+    return axios.delete(BASE_URL + bugId)
         .then(res => res.data)
 }
 
 function save(bug) {
-    // if (bug._id) {
-    //     return storageService.put(STORAGE_KEY, bug)
-    // } else {
-    //     return storageService.post(STORAGE_KEY, bug)
-    // }
-    const url = BASE_URL + 'save'
-    let queryParams = `?title=${bug.title}&description=${bug.description}&severity=${bug.severity}`
-    if (bug._id) queryParams += `&_id=${bug._id}`
-    return axios.get(url + queryParams)
-        .then(res => res.data)
-        .catch(err => {
-            console.log('err:', err)
-        })
+    const url = BASE_URL
+    if (bug._id) {
+        return axios.put(url + bug._id, bug)
+            .then(res => res.data)
+            .catch(err => {
+                console.log('err:', err)
+                throw err
+            })
+    } else {
+        return axios.post(url, bug)
+            .then(res => res.data)
+            .catch(err => {
+                console.log('err:', err)
+                throw err
+            })
+    }
 }
 
 function _createBugs() {
