@@ -30,13 +30,7 @@ function remove(bugId) {
 function save(bugToSave) {
     if (bugToSave._id) {
         const bugIdx = bugs.findIndex(bug => bug._id === bugToSave._id)
-        bugs[bugIdx] = {
-            ...bugs[bugIdx],...bugToSave
-            // title: bugToSave.title,
-            // description: bugToSave.description,
-            // severity: bugToSave.severity,
-            // createdAt: bugToSave.createdAt
-        }
+        bugs[bugIdx] = {...bugs[bugIdx],...bugToSave}
     } else {
         bugToSave._id = utilService.makeId()
         bugToSave.createdAt = Date.now()
