@@ -1,11 +1,5 @@
 [
     {
-        "severity": "2",
-        "title": "benzi",
-        "_id": "4U1Uj",
-        "createdAt": 1742889374978
-    },
-    {
         "_id": "1NF1N1T3",
         "title": "Infinite Loop Detected",
         "description": "The system enters an infinite loop when processing certain form inputs",
