@@ -1,6 +1,6 @@
 import { utilService } from './util.service.js'
 import fs from 'fs'
-
+const PAGE_SIZE = 5
 const bugs = utilService.readJsonFile('data/bugs.json')
 
 export const bugService = {
@@ -10,8 +10,35 @@ export const bugService = {
     remove,
 }
 
-function query() {
+function query(filterBy) {
     return Promise.resolve(bugs)
+        .then(bugs => {
+            if (filterBy.txt) {
+                const regExp = new RegExp(filterBy.txt, 'i')
+                bugs = bugs.filter(bug => regExp.test(bug.title))
+            }
+            if (filterBy.minSeverity) {
+                bugs = bugs.filter(bug => bug.severity >= filterBy.minSeverity)
+            }
+
+            if (filterBy.labels.length) {
+                bugs = bugs.filter(bug => filterBy.labels.some(label => bug.labels?.some(bugLabel => bugLabel.indexOf(label) !== -1)));
+            }
+            if (filterBy.sortBy) {
+                const { sortBy, sortDir } = filterBy
+
+                if (sortBy === 'severity' || sortBy === 'createdAt') {
+                    bugs.sort((bug1, bug2) => (bug1[sortBy] - bug2[sortBy]) * sortDir)
+                } else if (sortBy === 'title') {
+                    bugs.sort((bug1, bug2) => bug1.title.localeCompare(bug2.title) * sortDir)
+                }
+            }
+            if (filterBy.pageIdx !== undefined && filterBy.pageIdx !== null && filterBy.pageIdx !== '') {
+                const startIdx = filterBy.pageIdx * PAGE_SIZE
+                bugs = bugs.slice(startIdx, startIdx + PAGE_SIZE)
+            }
+            return bugs
+        })
 }
 
 function getById(bugId) {
@@ -30,7 +57,7 @@ function remove(bugId) {
 function save(bugToSave) {
     if (bugToSave._id) {
         const bugIdx = bugs.findIndex(bug => bug._id === bugToSave._id)
-        bugs[bugIdx] = {...bugs[bugIdx],...bugToSave}
+        bugs[bugIdx] = { ...bugs[bugIdx], ...bugToSave }
     } else {
         bugToSave._id = utilService.makeId()
         bugToSave.createdAt = Date.now()

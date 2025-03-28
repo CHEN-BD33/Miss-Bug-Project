@@ -1,3 +1,4 @@
+import path from 'path'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import { bugService} from './services/bug.service.js'
@@ -14,7 +15,15 @@ app.use(cookieParser())
 //* Express Routing:
 //* Read
 app.get('/api/bug', (req, res) => {
-    bugService.query()
+    const filterBy = {
+        txt: req.query.txt || '',
+        minSeverity: +req.query.minSeverity || 0,
+        pageIdx: req.query.pageIdx ,
+        sortBy: req.query.sortBy || '',
+        sortDir: +req.query.sortDir || 1,
+        labels: req.query.labels || []
+}
+    bugService.query(filterBy)
         .then(bugs => res.send(bugs))
         .catch(err => {
             loggerService.error('Cannot get bugs', err)
@@ -78,15 +87,9 @@ app.delete('/api/bug/:bugId', (req, res) => {
         })
 })
 
-// app.get('/cookies', (req, res) => {
-//     let visitedCount = req.cookies.visitedCount || 0
-//     visitedCount++
-//     console.log('visitedCount:', visitedCount)
-//     res.cookie('visitedCount', visitedCount, { maxAge: 5 * 1000 })
-//     // console.log('visitedCount:', visitedCount)
-//     res.send('Hello Puki')
-// })
-
  app.get('/', (req, res) => res.send('Hello there')) 
+ app.get('/**', (req, res) => {
+     res.sendFile(path.resolve('public/index.html'))
+ })
  
  app.listen(3030, () => console.log('Server ready at port 3030'))
