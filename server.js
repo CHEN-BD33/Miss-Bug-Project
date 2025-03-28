@@ -56,7 +56,6 @@ app.put('/api/bug/:bugId', (req, res) => {
         })
 })
 
-
 //* Get/Read by id
 app.get('/api/bug/:bugId', (req, res) => {
     const { bugId } = req.params
@@ -74,7 +73,6 @@ app.get('/api/bug/:bugId', (req, res) => {
             res.status(500).send('Cannot load bug')
         })
 })
-
 
 //* Remove/Delete
 app.delete('/api/bug/:bugId', (req, res) => {

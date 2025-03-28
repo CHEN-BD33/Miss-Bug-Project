@@ -1,5 +1,6 @@
 import { utilService } from './util.service.js'
 import fs from 'fs'
+
 const PAGE_SIZE = 5
 const bugs = utilService.readJsonFile('data/bugs.json')
 

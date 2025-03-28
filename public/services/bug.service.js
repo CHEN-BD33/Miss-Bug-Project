@@ -49,7 +49,6 @@ function save(bug) {
 function _createBugs() {
     let bugs = utilService.loadFromStorage(STORAGE_KEY)
     if (bugs && bugs.length > 0) return
-
     bugs = [
         {
             title: "Infinite Loop Detected",
