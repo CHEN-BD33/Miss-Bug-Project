@@ -25,7 +25,7 @@ export function BugDetails() {
                 <p>Description: {bug.description}</p>
                 <h5>Severity: <span>{bug.severity}</span></h5>
                 <h5>Created At: <span>{bug.createdAt}</span></h5>
-                
+                <h5>labels: <span>{bug.labels.join(', ')}</span></h5>
             </div>
         }
         <hr />
