@@ -64,17 +64,62 @@ export function BugIndex() {
         setFilterBy(prevFilter => ({ ...prevFilter, ...filterBy }))
     }
 
+    function onSetPage(diff) {
+        setFilterBy(prevFilter => ({ ...prevFilter, pageIdx: prevFilter.pageIdx + diff }))
+    }
+
+    function onSetSort(field) {
+        setFilterBy(prevFilter => {
+            if (prevFilter.sortBy === field) {
+                return {
+                    ...prevFilter, sortDir: prevFilter.sortDir === 1 ? -1 : 1
+                }
+            }
+
+            return {
+                ...prevFilter, sortBy: field, sortDir: 1
+            }
+        })
+    }
+
     return <section className="bug-index main-content">
-        
+
         <BugFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
         <header>
             <h3>Bug List</h3>
             <button onClick={onAddBug}>Add Bug</button>
         </header>
-        
-        <BugList 
-            bugs={bugs} 
-            onRemoveBug={onRemoveBug} 
+
+        <div className="sorting-controls">
+            <span>Sort by:</span>
+            <button onClick={() => onSetSort('title')}>
+                Title {filterBy.sortBy === 'title' && (filterBy.sortDir === 1 ? '▲' : '▼')}
+            </button>
+            <button onClick={() => onSetSort('severity')}>
+                Severity {filterBy.sortBy === 'severity' && (filterBy.sortDir === 1 ? '▲' : '▼')}
+            </button>
+            <button onClick={() => onSetSort('createdAt')}>
+                Created At {filterBy.sortBy === 'createdAt' && (filterBy.sortDir === 1 ? '▲' : '▼')}
+            </button>
+        </div>
+
+        <BugList
+            bugs={bugs}
+            onRemoveBug={onRemoveBug}
             onEditBug={onEditBug} />
+
+        <label>
+            Use Paging
+            <input type="checkbox" onChange={(ev) => {
+                setFilterBy(prevFilter => ({ ...prevFilter, pageIdx: ev.target.checked ? 0 : undefined }))
+            }} />
+        </label>
+
+        <div hidden={filterBy.pageIdx === undefined}>
+            <button disabled={filterBy.pageIdx === 0} onClick={() => { onSetPage(-1) }}>Prev Page</button>
+            <span>Page: {filterBy.pageIdx + 1}</span>
+            <button onClick={() => { onSetPage(1) }}>Next Page</button>
+        </div>
+
     </section>
 }
