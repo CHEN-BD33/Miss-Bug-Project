@@ -9,7 +9,11 @@
             "critical",
             "performance",
             "frontend"
-        ]
+        ],
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
     },
     {
         "_id": "C0FF33",
@@ -21,7 +25,11 @@
             "api",
             "backend",
             "intermittent"
-        ]
+        ],
+        "creator": {
+            "_id": "u102",
+            "fullname": "Kara Doe"
+        }
     },
     {
         "_id": "G0053",
@@ -33,7 +41,11 @@
             "data",
             "server",
             "low-priority"
-        ]
+        ],
+        "creator": {
+            "_id": "u103",
+            "fullname": "Alex Smith"
+        }
     },
     {
         "_id": "M3ML34K",
@@ -45,7 +57,11 @@
             "critical",
             "performance",
             "memory"
-        ]
+        ],
+        "creator": {
+            "_id": "u104",
+            "fullname": "John Doe"
+        }
     },
     {
         "_id": "0V3RFL0",
@@ -57,7 +73,11 @@
             "frontend",
             "responsive",
             "ui"
-        ]
+        ],
+        "creator": {
+            "_id": "u105",
+            "fullname": "Emily White"
+        }
     },
     {
         "_id": "T1M30UT",
@@ -69,7 +89,11 @@
             "auth",
             "ux",
             "need-fix"
-        ]
+        ],
+        "creator": {
+            "_id": "u106",
+            "fullname": "Michael Brown"
+        }
     },
     {
         "_id": "UPL0AD5",
@@ -81,7 +105,11 @@
             "upload",
             "file",
             "critical"
-        ]
+        ],
+        "creator": {
+            "_id": "u107",
+            "fullname": "Sarah Lee"
+        }
     },
     {
         "_id": "N0T1FY2",
@@ -93,7 +121,11 @@
             "notifications",
             "concurrency",
             "backend"
-        ]
+        ],
+        "creator": {
+            "_id": "u108",
+            "fullname": "David Green"
+        }
     },
     {
         "_id": "S3ARCH1",
@@ -105,7 +137,11 @@
             "search",
             "indexing",
             "need-investigation"
-        ]
+        ],
+        "creator": {
+            "_id": "u109",
+            "fullname": "Sophia Harris"
+        }
     },
     {
         "_id": "D4T3BUG",
@@ -117,7 +153,11 @@
             "frontend",
             "localization",
             "date"
-        ]
+        ],
+        "creator": {
+            "_id": "u110",
+            "fullname": "James Wilson"
+        }
     },
     {
         "_id": "PR1NT3R",
@@ -129,6 +169,21 @@
             "printing",
             "layout",
             "need-fix"
-        ]
+        ],
+        "creator": {
+            "_id": "u111",
+            "fullname": "Olivia Clark"
+        }
+    },
+    {
+        "_id": "abc123",
+        "title": "Cannot save a Car",
+        "description": "errors when clicking Save",
+        "severity": 3,
+        "createdAt": 1542107359454,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
     }
 ]

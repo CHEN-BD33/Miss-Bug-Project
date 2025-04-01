@@ -1,0 +1,48 @@
+{
+    "users": [
+      {
+        "_id": "u101",
+        "fullname": "Puki Ja"
+      },
+      {
+        "_id": "u102",
+        "fullname": "Kara Doe"
+      },
+      {
+        "_id": "u103",
+        "fullname": "Alex Smith"
+      },
+      {
+        "_id": "u104",
+        "fullname": "John Doe"
+      },
+      {
+        "_id": "u105",
+        "fullname": "Emily White"
+      },
+      {
+        "_id": "u106",
+        "fullname": "Michael Brown"
+      },
+      {
+        "_id": "u107",
+        "fullname": "Sarah Lee"
+      },
+      {
+        "_id": "u108",
+        "fullname": "David Green"
+      },
+      {
+        "_id": "u109",
+        "fullname": "Sophia Harris"
+      },
+      {
+        "_id": "u110",
+        "fullname": "James Wilson"
+      },
+      {
+        "_id": "u111",
+        "fullname": "Olivia Clark"
+      }
+    ]
+  }

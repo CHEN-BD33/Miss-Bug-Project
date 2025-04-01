@@ -1,98 +1,189 @@
 [
-  {
-      "_id": "1NF1N1T3",
-      "title": "Infinite Loop Detected", 
-      "description": "The system enters an infinite loop when processing certain form inputs", 
-      "severity": 4, 
-      "createdAt": 1705311828000,
-      "labels": ["critical", "performance", "frontend"]
-  },
-  {
-      "_id": "K3YB0RD",
-      "title": "Keyboard Not Found", 
-      "description": "Virtual keyboard doesn't appear on mobile devices when expected", 
-      "severity": 3, 
-      "createdAt": 1706960242000,
-      "labels": ["mobile", "ui", "need-fix"]
-  },
-  {
-      "_id": "C0FF33",
-      "title": "404 Coffee Not Found", 
-      "description": "Coffee machine API returns 404 errors during peak morning hours", 
-      "severity": 2, 
-      "createdAt": 1708229131000,
-      "labels": ["api", "backend", "intermittent"]
-  },
-  {
-      "_id": "G0053",
-      "title": "Unexpected Response", 
-      "description": "Server returns unexpected error messages when processing large datasets", 
-      "severity": 1, 
-      "createdAt": 1709659339000,
-      "labels": ["data", "server", "low-priority"]
-  },
-  {
-      "_id": "M3ML34K",
-      "title": "Memory Leak in Dashboard", 
-      "description": "Dashboard performance degrades over time due to memory not being properly released", 
-      "severity": 5, 
-      "createdAt": 1705920485000,
-      "labels": ["critical", "performance", "memory"]
-  },
-  {
-      "_id": "0V3RFL0",
-      "title": "CSS Overflow Issues", 
-      "description": "Content overflows container on smaller screens causing horizontal scrolling", 
-      "severity": 2, 
-      "createdAt": 1708930492000,
-      "labels": ["frontend", "responsive", "ui"]
-  },
-  {
-      "_id": "T1M30UT",
-      "title": "Authentication Timeout", 
-      "description": "Users are logged out too quickly even when actively using the application", 
-      "severity": 3, 
-      "createdAt": 1709106693000,
-      "labels": ["auth", "ux", "need-fix"]
-  },
-  {
-      "_id": "UPL0AD5",
-      "title": "Image Upload Failure", 
-      "description": "Image uploads fail silently when file size exceeds 2MB", 
-      "severity": 4, 
-      "createdAt": 1709382587000,
-      "labels": ["upload", "file", "critical"]
-  },
-  {
-      "_id": "N0T1FY2",
-      "title": "Notification Spam", 
-      "description": "System sends duplicate notifications when multiple users perform actions simultaneously", 
-      "severity": 2, 
-      "createdAt": 1707370256000,
-      "labels": ["notifications", "concurrency", "backend"]
-  },
-  {
-      "_id": "S3ARCH1",
-      "title": "Search Indexing Error", 
-      "description": "Recent items not appearing in search results until application restart", 
-      "severity": 3, 
-      "createdAt": 1709821298000,
-      "labels": ["search", "indexing", "need-investigation"]
-  },
-  {
-      "_id": "D4T3BUG",
-      "title": "Date Formatting Issue", 
-      "description": "Dates display incorrectly for users in certain timezones", 
-      "severity": 2, 
-      "createdAt": 1706634129000,
-      "labels": ["frontend", "localization", "date"]
-  },
-  {
-      "_id": "PR1NT3R",
-      "title": "Print Layout Broken", 
-      "description": "Reports print with overlapping text and missing elements", 
-      "severity": 3, 
-      "createdAt": 1707907207000,
-      "labels": ["printing", "layout", "need-fix"]
-  }
+    {
+        "_id": "1NF1N1T3",
+        "title": "Infinite Loop Detected",
+        "description": "The system enters an infinite loop when processing certain form inputs",
+        "severity": 4,
+        "createdAt": 1705311828000,
+        "labels": [
+            "critical",
+            "performance",
+            "frontend"
+        ],
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
+    },
+    {
+        "_id": "C0FF33",
+        "title": "404 Coffee Not Found",
+        "description": "Coffee machine API returns 404 errors during peak morning hours",
+        "severity": 2,
+        "createdAt": 1708229131000,
+        "labels": [
+            "api",
+            "backend",
+            "intermittent"
+        ],
+        "creator": {
+            "_id": "u102",
+            "fullname": "Kara Doe"
+        }
+    },
+    {
+        "_id": "G0053",
+        "title": "Unexpected Response",
+        "description": "Server returns unexpected error messages when processing large datasets",
+        "severity": 1,
+        "createdAt": 1709659339000,
+        "labels": [
+            "data",
+            "server",
+            "low-priority"
+        ],
+        "creator": {
+            "_id": "u103",
+            "fullname": "Alex Smith"
+        }
+    },
+    {
+        "_id": "M3ML34K",
+        "title": "Memory Leak in Dashboard",
+        "description": "Dashboard performance degrades over time due to memory not being properly released",
+        "severity": 5,
+        "createdAt": 1705920485000,
+        "labels": [
+            "critical",
+            "performance",
+            "memory"
+        ],
+        "creator": {
+            "_id": "u104",
+            "fullname": "John Doe"
+        }
+    },
+    {
+        "_id": "0V3RFL0",
+        "title": "CSS Overflow Issues",
+        "description": "Content overflows container on smaller screens causing horizontal scrolling",
+        "severity": 2,
+        "createdAt": 1708930492000,
+        "labels": [
+            "frontend",
+            "responsive",
+            "ui"
+        ],
+        "creator": {
+            "_id": "u105",
+            "fullname": "Emily White"
+        }
+    },
+    {
+        "_id": "T1M30UT",
+        "title": "Authentication Timeout",
+        "description": "Users are logged out too quickly even when actively using the application",
+        "severity": 3,
+        "createdAt": 1709106693000,
+        "labels": [
+            "auth",
+            "ux",
+            "need-fix"
+        ],
+        "creator": {
+            "_id": "u106",
+            "fullname": "Michael Brown"
+        }
+    },
+    {
+        "_id": "UPL0AD5",
+        "title": "Image Upload Failure",
+        "description": "Image uploads fail silently when file size exceeds 2MB",
+        "severity": 4,
+        "createdAt": 1709382587000,
+        "labels": [
+            "upload",
+            "file",
+            "critical"
+        ],
+        "creator": {
+            "_id": "u107",
+            "fullname": "Sarah Lee"
+        }
+    },
+    {
+        "_id": "N0T1FY2",
+        "title": "Notification Spam",
+        "description": "System sends duplicate notifications when multiple users perform actions simultaneously",
+        "severity": 2,
+        "createdAt": 1707370256000,
+        "labels": [
+            "notifications",
+            "concurrency",
+            "backend"
+        ],
+        "creator": {
+            "_id": "u108",
+            "fullname": "David Green"
+        }
+    },
+    {
+        "_id": "S3ARCH1",
+        "title": "Search Indexing Error",
+        "description": "Recent items not appearing in search results until application restart",
+        "severity": 3,
+        "createdAt": 1709821298000,
+        "labels": [
+            "search",
+            "indexing",
+            "need-investigation"
+        ],
+        "creator": {
+            "_id": "u109",
+            "fullname": "Sophia Harris"
+        }
+    },
+    {
+        "_id": "D4T3BUG",
+        "title": "Date Formatting Issue",
+        "description": "Dates display incorrectly for users in certain timezones",
+        "severity": 2,
+        "createdAt": 1706634129000,
+        "labels": [
+            "frontend",
+            "localization",
+            "date"
+        ],
+        "creator": {
+            "_id": "u110",
+            "fullname": "James Wilson"
+        }
+    },
+    {
+        "_id": "PR1NT3R",
+        "title": "Print Layout Broken",
+        "description": "Reports print with overlapping text and missing elements",
+        "severity": 3,
+        "createdAt": 1707907207000,
+        "labels": [
+            "printing",
+            "layout",
+            "need-fix"
+        ],
+        "creator": {
+            "_id": "u111",
+            "fullname": "Olivia Clark"
+        }
+    },
+    {
+        "_id": "abc123",
+        "title": "Cannot save a Car",
+        "description": "errors when clicking Save",
+        "severity": 3,
+        "createdAt": 1542107359454,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
+    }
 ]
