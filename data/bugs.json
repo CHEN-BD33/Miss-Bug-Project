@@ -11,8 +11,8 @@
             "frontend"
         ],
         "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja"
+            "_id": "u102",
+            "fullname": "Kara Doe"
         }
     },
     {
@@ -34,7 +34,7 @@
     {
         "_id": "G0053",
         "title": "Unexpected Response",
-        "description": "t",
+        "description": "Server returns unexpected error messages when processing large datasets",
         "severity": 1,
         "createdAt": 1709659339000,
         "labels": [
@@ -50,8 +50,8 @@
     {
         "_id": "M3ML34K",
         "title": "Memory Leak in Dashboard",
-        "description": "Dashboard performance degrades over time due to memory not being properly released",
-        "severity": 5,
+        "description": null,
+        "severity": 0,
         "createdAt": 1705920485000,
         "labels": [
             "critical",
@@ -173,17 +173,6 @@
         "creator": {
             "_id": "u111",
             "fullname": "Olivia Clark"
-        }
-    },
-    {
-        "_id": "abc123",
-        "title": "Cannot save a Car",
-        "description": "errors when clicking Save",
-        "severity": 3,
-        "createdAt": 1542107359454,
-        "creator": {
-            "_id": "u101",
-            "fullname": "Puki Ja"
         }
     }
 ]
