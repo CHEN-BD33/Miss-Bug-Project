@@ -1,6 +1,5 @@
 const { Link, NavLink } = ReactRouterDOM
 const { useNavigate } = ReactRouterDOM
-import { UserMsg } from './UserMsg.jsx'
 import { authService } from '../services/auth.service.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
 
@@ -35,6 +34,5 @@ export function AppHeader({ loggedinUser, setLoggedinUser }) {
                     </div>
             }
         </nav>
-        <UserMsg />
     </header>
 }
