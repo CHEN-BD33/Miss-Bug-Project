@@ -1,48 +1,68 @@
-{
-    "users": [
-      {
-        "_id": "u101",
-        "fullname": "Puki Ja"
-      },
-      {
-        "_id": "u102",
-        "fullname": "Kara Doe"
-      },
-      {
-        "_id": "u103",
-        "fullname": "Alex Smith"
-      },
-      {
-        "_id": "u104",
-        "fullname": "John Doe"
-      },
-      {
-        "_id": "u105",
-        "fullname": "Emily White"
-      },
-      {
-        "_id": "u106",
-        "fullname": "Michael Brown"
-      },
-      {
-        "_id": "u107",
-        "fullname": "Sarah Lee"
-      },
-      {
-        "_id": "u108",
-        "fullname": "David Green"
-      },
-      {
-        "_id": "u109",
-        "fullname": "Sophia Harris"
-      },
-      {
-        "_id": "u110",
-        "fullname": "James Wilson"
-      },
-      {
-        "_id": "u111",
-        "fullname": "Olivia Clark"
-      }
-    ]
+[
+  {
+    "_id": "u101",
+    "username": "puki",
+    "password": "puki123",
+    "fullname": "Puki Ja"
+  },
+  {
+    "_id": "u102",
+    "username": "karadoe",
+    "password": "kara123",
+    "fullname": "Kara Doe"
+  },
+  {
+    "_id": "u103",
+    "username": "alexsmith",
+    "password": "alex123",
+    "fullname": "Alex Smith"
+  },
+  {
+    "_id": "u104",
+    "username": "johndoe",
+    "password": "john123",
+    "fullname": "John Doe"
+  },
+  {
+    "_id": "u105",
+    "username": "emilywhite",
+    "password": "emily123",
+    "fullname": "Emily White"
+  },
+  {
+    "_id": "u106",
+    "username": "michaelb",
+    "password": "michael123",
+    "fullname": "Michael Brown"
+  },
+  {
+    "_id": "u107",
+    "username": "sarahlee",
+    "password": "sarah123",
+    "fullname": "Sarah Lee"
+  },
+  {
+    "_id": "u108",
+    "username": "davidg",
+    "password": "david123",
+    "fullname": "David Green"
+  },
+  {
+    "_id": "u109",
+    "username": "sophiah",
+    "password": "sophia123",
+    "fullname": "Sophia Harris"
+  },
+  {
+    "_id": "u110",
+    "username": "jamesw",
+    "password": "james123",
+    "fullname": "James Wilson"
+  },
+  {
+    "_id": "u111",
+    "username": "oliviac",
+    "password": "olivia123",
+    "fullname": "Olivia Clark"
   }
+]
