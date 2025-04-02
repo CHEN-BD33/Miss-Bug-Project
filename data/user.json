@@ -3,7 +3,8 @@
     "_id": "u102",
     "username": "karadoe",
     "password": "kara123",
-    "fullname": "Kara Doe"
+    "fullname": "Kara Doe",
+    "isAdmin": true
   },
   {
     "_id": "u103",

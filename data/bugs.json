@@ -3,7 +3,7 @@
         "_id": "1NF1N1T3",
         "title": "Infinite Loop Detected",
         "description": "The system enters an infinite loop when processing certain form inputs",
-        "severity": 4,
+        "severity": 3,
         "createdAt": 1705311828000,
         "labels": [
             "critical",
@@ -12,14 +12,15 @@
         ],
         "creator": {
             "_id": "u102",
-            "fullname": "Kara Doe"
+            "fullname": "Kara Doe",
+            "isAdmin": true
         }
     },
     {
         "_id": "C0FF33",
         "title": "404 Coffee Not Found",
-        "description": "Coffee machine API returns 404 errors during peak morning hours",
-        "severity": 2,
+        "description": "",
+        "severity": 1,
         "createdAt": 1708229131000,
         "labels": [
             "api",
@@ -28,7 +29,8 @@
         ],
         "creator": {
             "_id": "u102",
-            "fullname": "Kara Doe"
+            "fullname": "Kara Doe",
+            "isAdmin": true
         }
     },
     {
@@ -50,7 +52,7 @@
     {
         "_id": "M3ML34K",
         "title": "Memory Leak in Dashboard",
-        "description": null,
+        "description": "",
         "severity": 0,
         "createdAt": 1705920485000,
         "labels": [
