@@ -32,7 +32,8 @@ export function BugIndex() {
         const bug = {
             title: prompt('Bug title?', 'Bug ' + Date.now()),
             description: prompt('Bug description?'),
-            severity: +prompt('Bug severity?', 3)
+            severity: +prompt('Bug severity?', 3),
+            labels: prompt('Bug labels? (comma separated)').split(',').map(label => label.trim()).filter(Boolean) || []
         }
 
         bugService.save(bug)
@@ -85,10 +86,10 @@ export function BugIndex() {
     return <section className="bug-index main-content">
 
         <BugFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-        <header>
-            <h3>Bug List</h3>
-            <button onClick={onAddBug}>Add Bug</button>
-        </header>
+            <header>
+                <h3>Bug List</h3>
+                <button onClick={onAddBug}>Add Bug</button>
+            </header>
 
         <div className="sorting-controls">
             <span>Sort by:</span>
