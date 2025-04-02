@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser'
 import { bugService } from './services/bug.service.js'
 import { loggerService } from './services/logger.service.js'
 import { userService } from './services/user.service.js'
-import { authService } from './services/auth.servic.js'
+import { authService } from './services/auth.service.js'
 
 const app = express()
 
@@ -40,7 +40,7 @@ app.post('/api/bug', (req, res) => {
     if (!loggedinUser) return res.status(401).send(`Can't add bug`)
 
     const bugToSave = req.body
-    bugService.save(bugToSave)
+    bugService.save(bugToSave, loggedinUser)
         .then(bug => res.send(bug))
         .catch(err => {
             loggerService.error('Cannot add bug', err)
@@ -87,7 +87,7 @@ app.delete('/api/bug/:bugId', (req, res) => {
     if (!loggedinUser) return res.status(401).send(`Can't remove bug`)
 
     const { bugId } = req.params
-    bugService.remove(bugId)
+    bugService.remove(bugId, loggedinUser)
         .then(() => res.send('Bug Removed'))
         .catch(err => {
             loggerService.error('Cannot remove bug', err)
@@ -155,4 +155,5 @@ app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
 })
 
+const PORT = process.env.PORT || 3030
 app.listen(3030, () => console.log('Server ready at port 3030'))

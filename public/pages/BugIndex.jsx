@@ -2,11 +2,14 @@ const { useState, useEffect } = React
 
 import { bugService } from '../services/bug.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+import { authService } from '../services/auth.service.js'
 
 import { BugFilter } from '../cmps/BugFilter.jsx'
 import { BugList } from '../cmps/BugList.jsx'
 
 export function BugIndex() {
+    const loggedinUser = authService.getLoggedinUser()
+    
     const [bugs, setBugs] = useState(null)
     const [filterBy, setFilterBy] = useState(bugService.getDefaultFilter())
 
@@ -86,10 +89,12 @@ export function BugIndex() {
     return <section className="bug-index main-content">
 
         <BugFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
+        {loggedinUser &&
             <header>
                 <h3>Bug List</h3>
                 <button onClick={onAddBug}>Add Bug</button>
             </header>
+        }
 
         <div className="sorting-controls">
             <span>Sort by:</span>
