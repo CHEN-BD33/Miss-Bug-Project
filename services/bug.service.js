@@ -25,6 +25,9 @@ function query(filterBy) {
             if (filterBy.labels.length) {
                 bugs = bugs.filter(bug => filterBy.labels.some(label => bug.labels?.some(bugLabel => bugLabel.indexOf(label) !== -1)));
             }
+            if (filterBy.creatorId) {
+                bugs = bugs.filter(bug => filterBy.creatorId === bug.creator._id)
+            }
             if (filterBy.sortBy) {
                 const { sortBy, sortDir } = filterBy
 
@@ -63,9 +66,9 @@ function remove(bugId) {
 function save(bugToSave, loggedinUser) {
     if (bugToSave._id) {
         const bugIdx = bugs.findIndex(bug => bug._id === bugToSave._id)
-        if (!loggedinUser.isAdmin && 
-            bugToUpdate.creator._id !== loggedinUser._id){
-                return Promise.reject(`Not your bug`)
+        if (!loggedinUser.isAdmin &&
+            bugToUpdate.creator._id !== loggedinUser._id) {
+            return Promise.reject(`Not your bug`)
         }
         bugs[bugIdx] = { ...bugs[bugIdx], ...bugToSave }
     } else {

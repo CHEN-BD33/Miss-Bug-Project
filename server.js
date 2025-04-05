@@ -24,7 +24,8 @@ app.get('/api/bug', (req, res) => {
         pageIdx: req.query.pageIdx,
         sortBy: req.query.sortBy || '',
         sortDir: +req.query.sortDir || 1,
-        labels: req.query.labels || []
+        labels: req.query.labels || [],
+        creatorId: req.query.creatorId
     }
     bugService.query(filterBy)
         .then(bugs => res.send(bugs))
