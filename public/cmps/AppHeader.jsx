@@ -30,9 +30,10 @@ export function AppHeader({ loggedinUser, setLoggedinUser }) {
                     <NavLink to="/auth" >Login</NavLink> :
                     <div className="user">
                         <Link to={`/user/${loggedinUser._id}`}>{loggedinUser.fullname}</Link>
+                        {loggedinUser.isAdmin && <NavLink to="/admin">Admin</NavLink>}
                         <button onClick={onLogout}>logout</button>
                     </div>
             }
         </nav>
-    </header>
+    </header >
 }

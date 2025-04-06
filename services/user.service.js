@@ -33,8 +33,12 @@ function getByUsername(username) {
 }
 
 function remove(userId) {
-	users = users.filter(user => user._id !== userId)
-	return _saveUsersToFile()
+    console.log(userId)
+    const idx = users.findIndex(user => user._id === userId)
+    if (idx === -1) return Promise.reject('sorry not found')
+    users.splice(idx, 1)
+
+    return _saveUsersToFile()
 }
 
 function add(user) {
